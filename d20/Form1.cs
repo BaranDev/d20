@@ -22,10 +22,30 @@ namespace d20
 
     public partial class Form1 : Form
     {
+        List<int> rolls = new List<int>();
 
-
+        public int rollCount()
+        {
+            return rolls.Count;
+        }
         
+        public void storeValue(int value)
+        {
+            if (rolls.Count < 7)
+            {
+                rolls.Add(value);
+            }
+            else if (rolls.Count == 7)
+            {
+                rolls.Add(value);
+                rolls.RemoveAt(0);
+            }
+        }
 
+        public List<int> getRollList()
+        {
+            return rolls;
+        }
 
         private static bool IsAnimating(PictureBox box)
         {
@@ -64,7 +84,7 @@ namespace d20
 
             
 
-    }
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -117,7 +137,7 @@ namespace d20
             //mod location and correction without modifier
             if (modifier == 0)
             {
-                modplusroll.Text = modRollString;
+                modplusroll.Text = modRollString; //store//!!!!
                 modifierZero = true;
             }
             else
@@ -154,14 +174,11 @@ namespace d20
             //mod text minus or plus correction
             if (modifier>0)
             { 
-            modplusroll.Text = modRollString+"+"+ modifierString;
-                
+                modplusroll.Text = modRollString+"+"+ modifierString;    
             }
             if (modifier<0)
             {
-
                 modplusroll.Text = modRollString + modifierString;
-
             }
 
             string d20rollString = d20roll.ToString();
@@ -205,7 +222,7 @@ namespace d20
 
             }
 
-            
+            storeValue(d20roll);
             lblChangeText.Text = d20rollString;
 
             if (d20roll < 10 && d20roll < 0)
@@ -331,10 +348,17 @@ namespace d20
             string modString = modifier.ToString();
             mod.Text = modString;
         }
-
+        
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
 
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            Roll_History roll_History = new Roll_History(rolls.Count,rolls);
+            ActiveForm.Controls.Add(roll_History);
+            roll_History.BringToFront();
         }
 
         private void movingPanel_MouseMove(object sender, MouseEventArgs e)

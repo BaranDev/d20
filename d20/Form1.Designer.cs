@@ -32,20 +32,21 @@ namespace d20
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.rollbutton = new System.Windows.Forms.Button();
             this.lblChangeText = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.bruh1 = new System.Windows.Forms.Label();
             this.bruh2 = new System.Windows.Forms.Label();
-            this.movingPanel = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.d20Gif = new System.Windows.Forms.PictureBox();
             this.buttonPlus1 = new System.Windows.Forms.Button();
             this.buttonMinus1 = new System.Windows.Forms.Button();
             this.mod = new System.Windows.Forms.Label();
             this.modifierLabel = new System.Windows.Forms.Label();
             this.modifierResetButton = new System.Windows.Forms.Button();
             this.modplusroll = new System.Windows.Forms.Label();
+            this.btn_History = new System.Windows.Forms.Button();
+            this.movingPanel = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.d20Gif = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.movingPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.d20Gif)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace d20
             this.rollbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rollbutton.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.rollbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(93)))), ((int)(((byte)(46)))));
-            this.rollbutton.Location = new System.Drawing.Point(138, 320);
+            this.rollbutton.Location = new System.Drawing.Point(138, 317);
             this.rollbutton.Name = "rollbutton";
             this.rollbutton.Size = new System.Drawing.Size(180, 65);
             this.rollbutton.TabIndex = 1;
@@ -80,19 +81,19 @@ namespace d20
             this.lblChangeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChangeText.Click += new System.EventHandler(this.lblChangeText_Click);
             // 
-            // button1
+            // btn_exit
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Unispace", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(93)))), ((int)(((byte)(46)))));
-            this.button1.Location = new System.Drawing.Point(325, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 145);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "X";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_exit.Font = new System.Drawing.Font("Unispace", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(93)))), ((int)(((byte)(46)))));
+            this.btn_exit.Location = new System.Drawing.Point(325, 239);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(39, 143);
+            this.btn_exit.TabIndex = 4;
+            this.btn_exit.Text = "X";
+            this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // bruh1
             // 
@@ -113,59 +114,10 @@ namespace d20
             this.bruh2.Size = new System.Drawing.Size(0, 13);
             this.bruh2.TabIndex = 12;
             // 
-            // movingPanel
-            // 
-            this.movingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(39)))), ((int)(((byte)(27)))));
-            this.movingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.movingPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.movingPanel.Location = new System.Drawing.Point(0, 0);
-            this.movingPanel.Name = "movingPanel";
-            this.movingPanel.Size = new System.Drawing.Size(500, 17);
-            this.movingPanel.TabIndex = 13;
-            this.movingPanel.TabStop = false;
-            this.movingPanel.Click += new System.EventHandler(this.movingPanel_Click);
-            this.movingPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseDown);
-            this.movingPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseMove);
-            this.movingPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseUp);
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::d20.Properties.Resources.long_flag;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(370, -75);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(130, 364);
-            this.panel4.TabIndex = 9;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = global::d20.Properties.Resources.border60_2;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 400);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(500, 100);
-            this.panel6.TabIndex = 8;
-            // 
-            // d20Gif
-            // 
-            this.d20Gif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.d20Gif.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.d20Gif.ErrorImage = global::d20.Properties.Resources.ezgif_3_82f1eb50ba87;
-            this.d20Gif.Image = global::d20.Properties.Resources._150x150d20;
-            this.d20Gif.ImageLocation = "";
-            this.d20Gif.Location = new System.Drawing.Point(157, 60);
-            this.d20Gif.Name = "d20Gif";
-            this.d20Gif.Size = new System.Drawing.Size(223, 167);
-            this.d20Gif.TabIndex = 2;
-            this.d20Gif.TabStop = false;
-            this.d20Gif.WaitOnLoad = true;
-            this.d20Gif.Click += new System.EventHandler(this.d20Gif_Click);
-            // 
             // buttonPlus1
             // 
             this.buttonPlus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlus1.Location = new System.Drawing.Point(269, 239);
+            this.buttonPlus1.Location = new System.Drawing.Point(268, 240);
             this.buttonPlus1.Name = "buttonPlus1";
             this.buttonPlus1.Size = new System.Drawing.Size(50, 50);
             this.buttonPlus1.TabIndex = 14;
@@ -176,7 +128,7 @@ namespace d20
             // buttonMinus1
             // 
             this.buttonMinus1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinus1.Location = new System.Drawing.Point(139, 239);
+            this.buttonMinus1.Location = new System.Drawing.Point(138, 240);
             this.buttonMinus1.Name = "buttonMinus1";
             this.buttonMinus1.Size = new System.Drawing.Size(50, 50);
             this.buttonMinus1.TabIndex = 15;
@@ -226,14 +178,78 @@ namespace d20
             this.modplusroll.Size = new System.Drawing.Size(0, 14);
             this.modplusroll.TabIndex = 19;
             // 
+            // btn_History
+            // 
+            this.btn_History.FlatAppearance.BorderColor = System.Drawing.Color.LightCyan;
+            this.btn_History.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btn_History.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_History.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_History.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(162)));
+            this.btn_History.Location = new System.Drawing.Point(138, 384);
+            this.btn_History.Name = "btn_History";
+            this.btn_History.Size = new System.Drawing.Size(180, 22);
+            this.btn_History.TabIndex = 20;
+            this.btn_History.Text = "H   I   S   T   O   R   Y";
+            this.btn_History.UseVisualStyleBackColor = true;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
+            // movingPanel
+            // 
+            this.movingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(39)))), ((int)(((byte)(27)))));
+            this.movingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.movingPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.movingPanel.Location = new System.Drawing.Point(0, 0);
+            this.movingPanel.Name = "movingPanel";
+            this.movingPanel.Size = new System.Drawing.Size(500, 17);
+            this.movingPanel.TabIndex = 13;
+            this.movingPanel.TabStop = false;
+            this.movingPanel.Click += new System.EventHandler(this.movingPanel_Click);
+            this.movingPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseDown);
+            this.movingPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseMove);
+            this.movingPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.movingPanel_MouseUp);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::d20.Properties.Resources.long_flag1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(-3, -75);
+            this.panel1.Location = new System.Drawing.Point(0, -74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(130, 364);
             this.panel1.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::d20.Properties.Resources.long_flag;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(370, -74);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(130, 364);
+            this.panel4.TabIndex = 9;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::d20.Properties.Resources.border60_2;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 400);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(500, 100);
+            this.panel6.TabIndex = 8;
+            // 
+            // d20Gif
+            // 
+            this.d20Gif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.d20Gif.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.d20Gif.ErrorImage = global::d20.Properties.Resources.ezgif_3_82f1eb50ba87;
+            this.d20Gif.Image = global::d20.Properties.Resources._150x150d20;
+            this.d20Gif.ImageLocation = "";
+            this.d20Gif.Location = new System.Drawing.Point(157, 60);
+            this.d20Gif.Name = "d20Gif";
+            this.d20Gif.Size = new System.Drawing.Size(223, 167);
+            this.d20Gif.TabIndex = 2;
+            this.d20Gif.TabStop = false;
+            this.d20Gif.WaitOnLoad = true;
+            this.d20Gif.Click += new System.EventHandler(this.d20Gif_Click);
             // 
             // Form1
             // 
@@ -242,6 +258,7 @@ namespace d20
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(500, 500);
+            this.Controls.Add(this.btn_History);
             this.Controls.Add(this.modplusroll);
             this.Controls.Add(this.modifierResetButton);
             this.Controls.Add(this.modifierLabel);
@@ -254,7 +271,7 @@ namespace d20
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.lblChangeText);
             this.Controls.Add(this.d20Gif);
             this.Controls.Add(this.rollbutton);
@@ -277,7 +294,7 @@ namespace d20
         private System.Windows.Forms.Button rollbutton;
         private System.Windows.Forms.Label lblChangeText;
         private System.Windows.Forms.PictureBox d20Gif;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label bruh1;
@@ -290,6 +307,7 @@ namespace d20
         private System.Windows.Forms.Button modifierResetButton;
         private System.Windows.Forms.Label modplusroll;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_History;
     }
 }
 
